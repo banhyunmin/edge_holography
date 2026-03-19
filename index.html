@@ -166,8 +166,11 @@
             <span class="publication-venue">IEEE Transactions on Visualization and Computer Graphics (IEEE VR), 2026</span>
           </div>
 
-          <div class="is-size-6">
-            <span class="publication-awards">Best Paper Honorable Mention</span>
+          <div class="is-size-6 publication-authors">
+            <span class="publication-awards">
+              <span class="award-emoji">🎉</span>
+              Best Paper Honorable Mention
+            </span>
           </div>
 
           <div class="column has-text-centered">
@@ -218,6 +221,7 @@
       </div>
     </section>
 
+
     <!-- Abstract -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
@@ -226,32 +230,53 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Holographic displays offer the promise of realistic 3D visualization for virtual and augmented wearable solutions.
-                Nevertheless, existing computer-generated holography (CGH) methods often struggle with either a high computational
-                burden or limited display realism.
+                Holographic displays offer realistic 3D visualization, but practical deployment remains challenging due to the high
+                computational cost of computer-generated holography and the difficulty of efficiently compressing hologram data.
+                To address this, we present a lightweight, display-aware framework that combines implicit neural representations (INRs)
+                with camera-calibrated wave propagation for phase-only hologram generation and compression.
               </p>
               <p>
-                While the emerging cloud-edge computing mechanism can enable the real-time streaming of holograms, classic image
-                compression techniques struggle to efficiently encode and decode the substantial high-frequency information inherent
-                in hologram data. In light of these challenges, we present a display-aware and lightweight CGH framework, leveraging
-                implicit neural representations (INRs) and camera-calibrated wave propagation, to generate and compress high-fidelity
-                phase-only holograms.
-              </p>
-              <p>
-                Specifically, our approach interprets hologram generation as a continuous function approximation problem, enabling
-                the network, with reduced parameters, to effectively learn the inherent periodicity and high-frequency components of
-                2D and 3D hologram data. To enable efficient deployment, we further incorporate quantization-aware training, followed
-                by entropy coding. Experimental results evaluated on an unfiltered holographic display prototype demonstrate that the
-                proposed INR-CGH retains image quality comparable to that of existing optimization-based methods in both 2D and 3D
-                scenarios. In addition, our compact INR representation achieves up to 11× compression rate with minimal quality
-                degradation and can be further reduced via quantization-aware training. The resulting model enables ≥250 fps in
-                decoding speed, paving the way towards edge holography.
+                Our method represents holograms as continuous neural functions, enabling compact modeling of high-frequency holographic
+                structure, and further improves deployment efficiency through quantization-aware training and entropy coding.
+                Experiments on an unfiltered holographic display prototype show that the proposed INR-CGH achieves competitive 2D and 3D
+                reconstruction quality, up to 11× compression with minimal degradation, and decoding speeds of at least 250 fps. 
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
+    <!-- Video -->
+    <section class="section">
+  <div class="content has-text-centered dense-top">
+    <h2 class="title is-3">Captured 3D Planes</h2>
+    <p class="section-note">
+        Zoomed-in captured videos illustrating depth-dependent reconstruction changes across focal planes.
+    </p>
+  </div>
+
+    <div id="focus-carousel" class="carousel results-carousel">
+      <div class="item">
+        <video id="focus-near" controls muted loop playsinline preload="metadata">
+          <source src="static/videos/3d_near.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered video-caption">
+          Near-plane reconstruction.
+        </h2>
+      </div>
+
+      <div class="item">
+        <video id="focus-rear" controls muted loop playsinline preload="metadata">
+          <source src="static/videos/3d_rear.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered video-caption">
+          Far-plane reconstruction.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- System Pipeline -->
     <section class="section">
@@ -298,64 +323,85 @@
             </div>
 
             <h3 class="title is-4">Captured Results</h3>
-            <div class="content has-text-justified">
-              <p>
-                We present representative 2D and 3D captured reconstructions together with compression comparisons. Across both
-                settings, the INR-based representation yields cleaner reconstructions, reduced artifacts, and better robustness
-                under compact parameter compression than conventional codec-based baselines.
-              </p>
-            </div>
+<div class="content has-text-justified">
+  <p>
+    We compare SGD-based and INR-based hologram generation in both 2D and 3D settings, for both hologram representation and compression.
+    Each comparison block can be browsed interactively to inspect the differences between the two approaches.
+  </p>
+</div>
 
-            <div class="content has-text-centered">
-              <img src="static/images/2d_rep.png" alt="2D representative results" loading="lazy">
-            </div>
+<div class="result-compare-block">
+  <h4 class="compare-title">2D Hologram Representation</h4>
+  <div id="comp-2d-rep" class="carousel results-carousel comparison-carousel">
+    <div class="item">
+      <img src="static/images/2d_rep_sgd.png" alt="2D hologram representation with SGD" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        SGD-based hologram representation.
+      </h2>
+    </div>
+    <div class="item">
+      <img src="static/images/2d_rep_inr.png" alt="2D hologram representation with INR" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        INR-based hologram representation.
+      </h2>
+    </div>
+  </div>
+</div>
 
-            <div class="content has-text-centered">
-              <img src="static/images/2d_comp.png" alt="2D compression results" loading="lazy">
-            </div>
+<div class="result-compare-block">
+  <h4 class="compare-title">2D Hologram Compression</h4>
+  <div id="comp-2d-comp" class="carousel results-carousel comparison-carousel">
+    <div class="item">
+      <img src="static/images/2d_comp_sgd.png" alt="2D hologram compression with SGD" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        SGD-based hologram compression.
+      </h2>
+    </div>
+    <div class="item">
+      <img src="static/images/2d_comp_inr.png" alt="2D hologram compression with INR" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        INR-based hologram compression.
+      </h2>
+    </div>
+  </div>
+</div>
 
-            <div class="content has-text-centered">
-              <img src="static/images/3d_rep.png" alt="3D representative results" loading="lazy">
-            </div>
+<div class="result-compare-block">
+  <h4 class="compare-title">3D Hologram Representation</h4>
+  <div id="comp-3d-rep" class="carousel results-carousel comparison-carousel">
+    <div class="item">
+      <img src="static/images/3d_rep_sgd.png" alt="3D hologram representation with SGD" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        SGD-based hologram representation.
+      </h2>
+    </div>
+    <div class="item">
+      <img src="static/images/3d_rep_inr.png" alt="3D hologram representation with INR" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        INR-based hologram representation.
+      </h2>
+    </div>
+  </div>
+</div>
 
-            <div class="content has-text-centered">
-              <img src="static/images/3d_comp.png" alt="3D compression results" loading="lazy">
-            </div>
-            
-            <div class="content has-text-centered dense-top">
-              <h3 class="title is-4">Focus Sweep Videos</h3>
-              <p class="section-note">
-                Zoomed-in videos showing how the reconstructed appearance changes as the focus plane moves across depth.
-              </p>
-            </div>
-
-            <div id="focus-carousel" class="carousel results-carousel">
-              <div class="item">
-                <video id="focus-near" controls muted loop playsinline preload="metadata">
-                  <source src="static/videos/3d_near.mp4" type="video/mp4">
-                </video>
-                <h2 class="subtitle has-text-centered video-caption">
-                  Near focus sweep. Zoomed-in view showing how the in-focus region evolves as the focal plane changes.
-                </h2>
-              </div>
-
-              <div class="item">
-                <video id="focus-rear" controls muted loop playsinline preload="metadata">
-                  <source src="static/videos/3d_rear.mp4" type="video/mp4">
-                </video>
-                <h2 class="subtitle has-text-centered video-caption">
-                  Rear focus sweep. Zoomed-in view showing the depth-dependent reconstruction behavior at a farther plane.
-                </h2>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-
+<div class="result-compare-block">
+  <h4 class="compare-title">3D Hologram Compression</h4>
+  <div id="comp-3d-comp" class="carousel results-carousel comparison-carousel">
+    <div class="item">
+      <img src="static/images/3d_comp_sgd.png" alt="3D hologram compression with SGD" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        SGD-based hologram compression.
+      </h2>
+    </div>
+    <div class="item">
+      <img src="static/images/3d_comp_inr.png" alt="3D hologram compression with INR" loading="lazy">
+      <h2 class="subtitle has-text-centered comparison-caption">
+        INR-based hologram compression.
+      </h2>
+    </div>
+  </div>
+</div>
+</section>
 
     <!-- BibTeX -->
     <section class="section" id="BibTeX">

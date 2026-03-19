@@ -226,8 +226,10 @@ body {
 }
 
 .hardware-image {
-  max-width: 760px;
+  max-width: 550px;
+  width: 100%;
   margin: 0 auto;
+  display: block;
 }
 
 /* Video embed block */
@@ -716,11 +718,68 @@ a:focus {
 .publication-awards {
   color: #d62828;
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: 1.2rem;
   margin-top: 0.3rem;
   display: inline-block;
   background: none;
   padding: 0;
   border-radius: 0;
   border-left: none;
+}
+
+.award-emoji {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.result-compare-block {
+  margin-top: 1.35rem;
+  margin-bottom: 1.6rem;
+}
+
+.compare-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.comparison-carousel {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.comparison-carousel .item {
+  padding: 0.25rem;
+}
+
+.comparison-carousel img {
+  width: 100%;
+  display: block;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+.comparison-caption {
+  font-size: 0.97rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+#focus-carousel {
+  max-width: 900px;
+  margin: 0.9rem auto 0 auto;
+}
+
+#focus-carousel .item {
+  padding: 0.35rem;
+}
+
+#focus-carousel video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
 }

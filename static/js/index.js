@@ -154,4 +154,15 @@ $(document).ready(function () {
     navigation: true,
     pauseOnHover: true
   });
+
+  bulmaCarousel.attach('.comparison-carousel', {
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    loop: true,
+    infinite: true,
+    autoplay: false,
+    pagination: false,
+    navigation: true,
+    pauseOnHover: true
+  });
 });
