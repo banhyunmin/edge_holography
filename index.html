@@ -1,60 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Towards Edge Holography via Implicit Neural Representation and Compression">
-  <meta name="keywords" content="Holography, INR, Compression, CGH, IEEE VR, TVCG">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Towards Edge Holography via Implicit Neural Representation and Compression</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <meta name="title" content="Towards Edge Holography via Implicit Neural Representation & Compression">
+  <meta name="description" content="A lightweight INR-based framework for phase-only hologram generation and compression with camera-calibrated wave propagation for edge holography.">
+  <meta name="keywords" content="computer-generated holography, implicit neural representation, hologram compression, edge holography, phase-only holograms, TVCG, IEEE VR">
+  <meta name="author" content="Hyunmin Ban, Wenbin Zhou, Yifan Peng">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The University of Hong Kong">
+  <meta property="og:title" content="Towards Edge Holography via Implicit Neural Representation & Compression">
+  <meta property="og:description" content="A lightweight INR-based framework for phase-only hologram generation and compression with camera-calibrated wave propagation for edge holography.">
+  <!-- Replace with your final project page URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- Replace with your final social preview image if needed -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Towards Edge Holography via Implicit Neural Representation & Compression">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Towards Edge Holography via Implicit Neural Representation & Compression">
+  <meta name="twitter:description" content="A lightweight INR-based framework for phase-only hologram generation and compression with camera-calibrated wave propagation for edge holography.">
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+
+  <meta name="citation_title" content="Towards Edge Holography via Implicit Neural Representation and Compression">
+  <meta name="citation_author" content="Ban, Hyunmin">
+  <meta name="citation_author" content="Zhou, Wenbin">
+  <meta name="citation_author" content="Peng, Yifan">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="IEEE Transactions on Visualization and Computer Graphics (IEEE VR), 2026">
+  <meta name="citation_pdf_url" content="./static/papers/edgeholo_main.pdf">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Towards Edge Holography via Implicit Neural Representation & Compression</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Towards Edge Holography via Implicit Neural Representation and Compression",
+    "description": "A lightweight INR-based framework for phase-only hologram generation and compression with camera-calibrated wave propagation for edge holography.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Hyunmin Ban",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The University of Hong Kong"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Wenbin Zhou",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The University of Hong Kong"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yifan Peng",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The University of Hong Kong"
+        }
+      }
+    ],
+    "datePublished": "2026-03-24",
+    "publisher": {
+      "@type": "Organization",
+      "name": "IEEE Transactions on Visualization and Computer Graphics"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": [
+      "computer-generated holography",
+      "implicit neural representation",
+      "hologram compression",
+      "edge holography",
+      "phase-only holograms"
+    ],
+    "isAccessibleForFree": true,
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    }
+  }
+  </script>
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#top">Top</a>
-      <a class="navbar-item" href="#abstract">Abstract</a>
-      <a class="navbar-item" href="#pipeline">Pipeline</a>
-      <a class="navbar-item" href="#results">Results</a>
-      <a class="navbar-item" href="#bibtex">BibTeX</a>
-    </div>
-  </div>
-</nav>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-<section class="hero publication-header" id="top">
+  <main id="main-content">
+    <section class="hero publication-header">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Towards Edge Holography via Implicit Neural Representation and Compression</h1>
+          <h1 class="title is-1 publication-title">
+            Towards Edge Holography via<br>
+            Implicit Neural Representation &amp; Compression
+          </h1>
 
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-5 publication-authors author-names">
             <span class="author-block">Hyunmin Ban,</span>
             <span class="author-block">Wenbin Zhou,</span>
             <span class="author-block">Yifan Peng</span>
@@ -65,214 +157,242 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="publication-venue">IEEE Transactions on Visualization and Computer Graphics (IEEE VR 2026)</span>
-            <span class="publication-awards">(Best Paper Honorable Mention)</span>
+            <span class="publication-venue">IEEE Transactions on Visualization and Computer Graphics (IEEE VR), 2026</span>
+          </div>
+
+          <div class="is-size-6">
+            <span class="publication-awards">Best Paper Honorable Mention</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="./static/papers/edgeholo_main.pdf"
-                   class="external-link button is-normal is-rounded is-dark"
-                   target="_blank" rel="noopener noreferrer">
+                <a href="./static/papers/edgeholo_main.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                    <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
               </span>
 
               <span class="link-block">
-                <a class="external-link button is-normal is-rounded is-dark is-light" aria-disabled="true">
+                <a href="./static/papers/edgeholo_supplementary.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-youtube"></i>
+                    <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Video (TBD)</span>
+                  <span>Supplementary</span>
                 </a>
               </span>
 
               <span class="link-block">
-                <a href="./static/papers/edgeholo_supplementary.pdf"
-                   class="external-link button is-normal is-rounded is-dark"
-                   target="_blank" rel="noopener noreferrer">
+                <a class="external-link button is-normal is-rounded is-dark is-light" aria-disabled="true">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                    <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Supplemental Material</span>
+                  <span>Video (TBD)</span>
                 </a>
               </span>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="publication-banner">
-        <img src="./static/images/abstract.png" alt="Abstract overview image">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="abstract">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Holographic displays offer the promise of realistic 3D visualization for virtual and augmented wearable solutions.
-            Nevertheless, existing computer-generated holography (CGH) methods often struggle with either a high computational
-            burden or limited display realism.
-          </p>
-          <p>
-            While the emerging cloud-edge computing mechanism can enable the real-time streaming of holograms, classic image
-            compression techniques struggle to efficiently encode and decode the substantial high-frequency information inherent
-            in hologram data. In light of these challenges, we present a display-aware and lightweight CGH framework, leveraging
-            implicit neural representations (INRs) and camera-calibrated wave propagation, to generate and compress high-fidelity
-            phase-only holograms.
-          </p>
-          <p>
-            Specifically, our approach interprets hologram generation as a continuous function approximation problem, enabling
-            the network, with reduced parameters, to effectively learn the inherent periodicity and high-frequency components of
-            2D and 3D hologram data. To enable efficient deployment, we further incorporate quantization-aware training, followed
-            by entropy coding. Experimental results evaluated on an unfiltered holographic display prototype demonstrate that the
-            proposed INR-CGH retains image quality comparable to that of existing optimization-based methods in both 2D and 3D
-            scenarios. In addition, our compact INR representation achieves up to 11× compression rate with minimal quality
-            degradation and can be further reduced via quantization-aware training. The resulting model enables ≥250 fps in
-            decoding speed, paving the way towards edge holography.
-          </p>
+    <!-- Teaser image -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="static/images/abstract.png" alt="Abstract overview figure" loading="eager">
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section" id="pipeline">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">System Pipeline</h2>
-        <div class="content has-text-justified">
-          <p>
-            Our INR-CGH framework represents a phase-only hologram as a compact implicit neural function. On the server side,
-            coordinates are input to the INR model and optimized through a camera-calibrated propagation model with
-            quantization-aware training. The resulting parameters are then entropy coded for efficient transmission.
-          </p>
-          <p>
-            On the edge side, the compressed parameters are decoded and directly inferred into a phase-only hologram, enabling
-            fast holographic display with high-fidelity reconstruction under unfiltered optical conditions.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <img src="./static/images/pipeline.png" alt="System pipeline figure">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="results">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Experimental Results</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h3 class="title is-4">Hardware Prototype</h3>
-        <div class="content has-text-justified">
-          <p>
-            We built a benchtop unfiltered holographic display prototype to validate the proposed method in real optical
-            experiments. The setup uses a phase-only SLM, RGB laser illumination, relay optics, and a focus-tunable capture
-            process for evaluating reconstructions across multiple depths.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <img src="./static/images/optical_setup.png" alt="Hardware prototype figure" class="hardware-image">
+    <!-- Abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Holographic displays offer the promise of realistic 3D visualization for virtual and augmented wearable solutions.
+                Nevertheless, existing computer-generated holography (CGH) methods often struggle with either a high computational
+                burden or limited display realism.
+              </p>
+              <p>
+                While the emerging cloud-edge computing mechanism can enable the real-time streaming of holograms, classic image
+                compression techniques struggle to efficiently encode and decode the substantial high-frequency information inherent
+                in hologram data. In light of these challenges, we present a display-aware and lightweight CGH framework, leveraging
+                implicit neural representations (INRs) and camera-calibrated wave propagation, to generate and compress high-fidelity
+                phase-only holograms.
+              </p>
+              <p>
+                Specifically, our approach interprets hologram generation as a continuous function approximation problem, enabling
+                the network, with reduced parameters, to effectively learn the inherent periodicity and high-frequency components of
+                2D and 3D hologram data. To enable efficient deployment, we further incorporate quantization-aware training, followed
+                by entropy coding. Experimental results evaluated on an unfiltered holographic display prototype demonstrate that the
+                proposed INR-CGH retains image quality comparable to that of existing optimization-based methods in both 2D and 3D
+                scenarios. In addition, our compact INR representation achieves up to 11× compression rate with minimal quality
+                degradation and can be further reduced via quantization-aware training. The resulting model enables ≥250 fps in
+                decoding speed, paving the way towards edge holography.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h3 class="title is-4">Captured Results</h3>
-        <div class="content has-text-justified">
-          <p>
-            We present representative 2D and 3D captured reconstructions together with compression comparisons. Across both
-            settings, the INR-based representation yields cleaner reconstructions, reduced artifacts, and better robustness
-            under compact parameter compression than conventional codec-based baselines.
-          </p>
-        </div>
-
-        <div class="content has-text-centered">
-          <img src="./static/images/2d_rep.png" alt="2D representative results">
-        </div>
-
-        <div class="content has-text-centered">
-          <img src="./static/images/2d_comp.png" alt="2D compression results">
-        </div>
-
-        <div class="content has-text-centered">
-          <img src="./static/images/3d_rep.png" alt="3D representative results">
-        </div>
-
-        <div class="content has-text-centered">
-          <img src="./static/images/3d_comp.png" alt="3D compression results">
+    <!-- System Pipeline -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">System Pipeline</h2>
+            <div class="content has-text-justified">
+              <p>
+                Our INR-CGH framework represents a phase-only hologram as a compact implicit neural function. On the server side,
+                coordinates are input to the INR model and optimized through a camera-calibrated propagation model with
+                quantization-aware training. The resulting parameters are then entropy coded for efficient transmission.
+              </p>
+              <p>
+                On the edge side, the compressed parameters are decoded and directly inferred into a phase-only hologram, enabling
+                fast holographic display with high-fidelity reconstruction under unfiltered optical conditions.
+              </p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/pipeline.png" alt="System pipeline figure" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Experimental Results -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Experimental Results</h2>
 
-<section class="section" id="bibtex">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3">BibTeX</h2>
-<pre><code>@article{ban2026edgeholography,
+            <h3 class="title is-4">Hardware Prototype</h3>
+            <div class="content has-text-justified">
+              <p>
+                We built a benchtop unfiltered holographic display prototype to validate the proposed method in real optical
+                experiments. The setup uses a phase-only SLM, RGB laser illumination, relay optics, and a focus-tunable capture
+                process for evaluating reconstructions across multiple depths.
+              </p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/optical_setup.png" alt="Hardware prototype figure" class="hardware-image" loading="lazy">
+            </div>
+
+            <h3 class="title is-4">Captured Results</h3>
+            <div class="content has-text-justified">
+              <p>
+                We present representative 2D and 3D captured reconstructions together with compression comparisons. Across both
+                settings, the INR-based representation yields cleaner reconstructions, reduced artifacts, and better robustness
+                under compact parameter compression than conventional codec-based baselines.
+              </p>
+            </div>
+
+            <div class="content has-text-centered">
+              <img src="static/images/2d_rep.png" alt="2D representative results" loading="lazy">
+            </div>
+
+            <div class="content has-text-centered">
+              <img src="static/images/2d_comp.png" alt="2D compression results" loading="lazy">
+            </div>
+
+            <div class="content has-text-centered">
+              <img src="static/images/3d_rep.png" alt="3D representative results" loading="lazy">
+            </div>
+
+            <div class="content has-text-centered">
+              <img src="static/images/3d_comp.png" alt="3D compression results" loading="lazy">
+            </div>
+            
+            <div class="content has-text-centered dense-top">
+              <h3 class="title is-4">Focus Sweep Videos</h3>
+              <p class="section-note">
+                Zoomed-in videos showing how the reconstructed appearance changes as the focus plane moves across depth.
+              </p>
+            </div>
+
+            <div id="focus-carousel" class="carousel results-carousel">
+              <div class="item">
+                <video id="focus-near" controls muted loop playsinline preload="metadata">
+                  <source src="static/videos/3d_near.mp4" type="video/mp4">
+                </video>
+                <h2 class="subtitle has-text-centered video-caption">
+                  Near focus sweep. Zoomed-in view showing how the in-focus region evolves as the focal plane changes.
+                </h2>
+              </div>
+
+              <div class="item">
+                <video id="focus-rear" controls muted loop playsinline preload="metadata">
+                  <source src="static/videos/3d_rear.mp4" type="video/mp4">
+                </video>
+                <h2 class="subtitle has-text-centered video-caption">
+                  Rear focus sweep. Zoomed-in view showing the depth-dependent reconstruction behavior at a farther plane.
+                </h2>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+<pre id="bibtex-code"><code>@article{ban2026edgeholography,
   title   = {Towards Edge Holography via Implicit Neural Representation and Compression},
   author  = {Ban, Hyunmin and Zhou, Wenbin and Peng, Yifan},
   journal = {IEEE Transactions on Visualization and Computer Graphics},
   year    = {2026},
   note    = {IEEE VR 2026}
 }</code></pre>
-  </div>
-</section>
+      </div>
+    </section>
+  </main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/papers/edgeholo_main.pdf"
-         target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            © 2026 Hyunmin Ban
-          </p>
-          <p>
-            This website is adapted from the
-            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies project page template</a>,
-            which is released under a
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>© 2026 Hyunmin Ban</p>
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              which was adopted from the
+              <a href="https://nerfies.github.io" target="_blank">Nerfies</a>
+              project page.
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                Creative Commons Attribution-ShareAlike 4.0 International License
+              </a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
