@@ -1,35 +1,5 @@
-# Project Page Template
+# Towards Edge Holography via Implicit Neural Representation and Compression
 
-This version is structured for:
+This repository contains the source code for the project website of our paper, *Towards Edge Holography via Implicit Neural Representation and Compression*.
 
-- Title
-- Authors
-- Affiliation
-- Venue
-- Paper / Video / Supplemental Material buttons
-- Abstract image
-- Abstract
-- System Pipeline
-- Experimental Results
-  - Hardware Prototype
-  - Captured Results
-- BibTeX
-
-
-## Text to update
-
-Edit `index.html` and replace:
-
-- the abstract paragraph
-- Paper / Video / Supplemental Material links
-- final BibTeX fields
-- venue note if needed
-
-## GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload all files from this folder.
-3. Go to `Settings -> Pages`.
-4. Set the source to `Deploy from a branch`.
-5. Choose `main` and `/root`.
-6. Save and wait for the site URL.
+Our work has been accepted to *IEEE Transactions on Visualization and Computer Graphics (IEEE VR 2026)*.
