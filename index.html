@@ -249,34 +249,35 @@
     
     <!-- Video -->
     <section class="section">
-  <div class="content has-text-centered dense-top">
-    <h2 class="title is-3">Captured 3D Planes</h2>
-    <p class="section-note">
-        Zoomed-in captured videos illustrating depth-dependent reconstruction changes across focal planes.
-    </p>
-  </div>
+      <div class="container is-max-desktop">
+        <div class="content has-text-centered dense-top">
+          <h2 class="title is-3">Captured 3D Planes</h2>
+          <p class="section-note">
+            Zoomed-in captured videos illustrating depth-dependent reconstruction changes across focal planes.
+          </p>
+        </div>
 
-    <div id="focus-carousel" class="carousel results-carousel">
-      <div class="item">
-        <video id="focus-near" controls muted loop playsinline preload="metadata">
-          <source src="static/videos/3d_near.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered video-caption">
-          Near-plane reconstruction.
-        </h2>
-      </div>
+        <div id="focus-carousel" class="carousel results-carousel">
+          <div class="item">
+            <video id="focus-near" controls muted loop playsinline preload="metadata">
+              <source src="static/videos/3d_near.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered video-caption">
+              Near-plane reconstruction.
+            </h2>
+          </div>
 
-      <div class="item">
-        <video id="focus-rear" controls muted loop playsinline preload="metadata">
-          <source src="static/videos/3d_rear.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered video-caption">
-          Far-plane reconstruction.
-        </h2>
+          <div class="item">
+            <video id="focus-rear" controls muted loop playsinline preload="metadata">
+              <source src="static/videos/3d_rear.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered video-caption">
+              Far-plane reconstruction.
+            </h2>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- System Pipeline -->
     <section class="section">
@@ -319,7 +320,7 @@
               </p>
             </div>
             <div class="content has-text-centered">
-              <img src="static/images/optical_setup.png" alt="Hardware prototype figure" class="hardware-image" loading="lazy">
+              <img src="static/images/optical_setup.png" alt="Hardware prototype figure" class="hardware-image" loading="eager">
             </div>
 
             <h3 class="title is-4">Captured Results</h3>
@@ -401,7 +402,10 @@
     </div>
   </div>
 </div>
-</section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- BibTeX -->
     <section class="section" id="BibTeX">

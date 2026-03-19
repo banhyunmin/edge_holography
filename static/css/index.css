@@ -172,6 +172,12 @@ body {
 }
 
 .publication-banner img,
+.teaser img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .publication-banner video {
   width: 100%;
   height: auto;
@@ -226,10 +232,11 @@ body {
 }
 
 .hardware-image {
-  max-width: 550px;
-  width: 100%;
-  margin: 0 auto;
   display: block;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Video embed block */
@@ -584,6 +591,14 @@ a:focus {
 }
 
 /* Mobile */
+.hardware-image {
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) {
   .hero-body {
     padding: 1.7rem 1rem;
@@ -642,7 +657,7 @@ a:focus {
   }
 
   .hardware-image {
-    max-width: 100%;
+    max-width: 280px;
   }
 }
 
@@ -684,6 +699,10 @@ a:focus {
   .button {
     width: 100%;
     justify-content: center;
+  }
+
+  .hardware-image {
+    max-width: 230px;
   }
 }
 
@@ -750,12 +769,19 @@ a:focus {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  .comparison-carousel {
+    max-width: 100%;
+  }
+}
+
 .comparison-carousel .item {
   padding: 0.25rem;
 }
 
 .comparison-carousel img {
   width: 100%;
+  height: auto;
   display: block;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
@@ -782,4 +808,63 @@ a:focus {
   width: 100%;
   display: block;
   border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  #focus-carousel,
+  .comparison-carousel {
+    max-width: 100%;
+  }
+
+  #focus-carousel .item,
+  .comparison-carousel .item {
+    margin: 0.25rem;
+    padding: 0.3rem;
+  }
+
+  .result-compare-block {
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .compare-title {
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+  }
+
+  .video-caption,
+  .comparison-caption,
+  .section-note {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .slider-navigation-previous,
+  .slider-navigation-next {
+    width: 34px;
+    height: 34px;
+    margin-top: -17px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #focus-carousel .item,
+  .comparison-carousel .item {
+    margin: 0.15rem;
+    padding: 0.2rem;
+  }
+
+  .video-caption,
+  .comparison-caption,
+  .section-note {
+    font-size: 0.88rem;
+  }
+
+  .slider-navigation-previous,
+  .slider-navigation-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+  }
 }
