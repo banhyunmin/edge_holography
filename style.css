@@ -5,6 +5,7 @@
   --line: #e5e7eb;
   --line-strong: #d6d9df;
   --panel: #ffffff;
+  --panel-soft: #fafbfc;
   --accent: #2f5bd3;
   --max-wide: 1200px;
   --max-narrow: 860px;
@@ -30,9 +31,14 @@ a {
   color: var(--accent);
 }
 
-img {
+img,
+object,
+embed {
   display: block;
   max-width: 100%;
+}
+
+img {
   height: auto;
 }
 
@@ -158,27 +164,51 @@ pre {
 }
 
 .section-head {
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
 }
 
-.content-block p {
-  margin: 0;
+.section-head p {
+  margin-top: 0.2rem;
+}
+
+.content-block p,
+.subsection p {
+  margin: 0 0 1rem;
   font-size: 1rem;
+}
+
+.content-block p:last-child,
+.subsection p:last-child {
+  margin-bottom: 0;
 }
 
 .figure-block {
   margin: 0;
 }
 
-.figure-block img {
+.figure-block + .figure-block {
+  margin-top: 1.6rem;
+}
+
+.figure-block img,
+.figure-block object,
+.figure-block embed {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: #fafafa;
+  background: var(--panel-soft);
+  overflow: hidden;
 }
 
-.main-figure img {
+.main-figure img,
+.main-figure object,
+.main-figure embed {
   border-radius: 18px;
+}
+
+.figure-block object,
+.figure-block embed {
+  min-height: 420px;
 }
 
 figcaption {
@@ -189,7 +219,7 @@ figcaption {
 }
 
 .subsection + .subsection {
-  margin-top: 2rem;
+  margin-top: 2.2rem;
 }
 
 .subsection h3 {
@@ -263,6 +293,11 @@ figcaption {
   .action-btn {
     width: 100%;
     max-width: 320px;
+  }
+
+  .figure-block object,
+  .figure-block embed {
+    min-height: 300px;
   }
 
   .copy-btn {

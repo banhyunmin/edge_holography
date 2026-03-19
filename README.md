@@ -15,12 +15,6 @@ This version is structured for:
   - Captured Results
 - BibTeX
 
-## Files to replace
-
-- `assets/abstract-image-placeholder.svg`
-- `assets/system-pipeline-placeholder.svg`
-- `assets/hardware-prototype-placeholder.svg`
-- `assets/captured-results-placeholder.svg`
 
 ## Text to update
 
