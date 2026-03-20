@@ -147,8 +147,8 @@ $(document).ready(function () {
   bulmaCarousel.attach('#focus-carousel', {
     slidesToScroll: 1,
     slidesToShow: 1,
-    loop: true,
-    infinite: true,
+        loop: false,
+        infinite: false,
     autoplay: false,
     pagination: false,
     navigation: true,
@@ -158,8 +158,8 @@ $(document).ready(function () {
   bulmaCarousel.attach('.comparison-carousel', {
     slidesToScroll: 1,
     slidesToShow: 1,
-    loop: true,
-    infinite: true,
+        loop: false,
+        infinite: false,
     autoplay: false,
     pagination: false,
     navigation: true,
