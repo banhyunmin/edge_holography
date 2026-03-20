@@ -89,8 +89,8 @@ body {
 }
 
 .teaser .hero-body {
-  padding-top: 1rem;
-  padding-bottom: 2.25rem;
+  padding-top: 0.05rem;
+  padding-bottom: 2rem;
 }
 
 /* Title / authors / venue */
